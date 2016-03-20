@@ -22,7 +22,7 @@ gem_file = FileList.new "target/#{app_name}-#{ver}.gem"
 rule /target\/.+?\.gem/ => gem_source_files do |t|
   ensure_dir "target"
   sh "gem build #{app_name}.gemspec"
-  mv "#{app_name}-#{ver}.gem", "target"
+  mv "#{app_name}-#{ver}.gem", "target/"
 end
 
 task :build => "target/#{app_name}-#{ver}.gem"
