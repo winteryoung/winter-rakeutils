@@ -28,11 +28,10 @@ end
 task :build => "target/#{app_name}-#{ver}.gem"
 
 task :local => [ :clean, :build ] do
-  sh "gem uninstall #{app_name}"
-  pwd = Dir.pwd
-  Dir.chdir "target"
-  sh "gem install #{app_name}-#{ver}.gem"
-  Dir.chdir pwd
+  sh "gem uninstall -ax #{app_name}"
+  within_dir "target" do
+    sh "gem install #{app_name}-#{ver}.gem"
+  end
 end
 
 task :test do

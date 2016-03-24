@@ -25,4 +25,14 @@ module WinterRakeUtils
       sh "git push"
     end
   end
+
+  def within_dir dir, &block
+    pwd = Dir.pwd
+    Dir.chdir dir
+    begin
+      block.call
+    ensure
+      Dir.chdir pwd
+    end
+  end
 end
