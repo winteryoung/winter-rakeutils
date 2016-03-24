@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.description = "Winter Young's rake utils"
   s.authors     = [ "Winter Young" ]
   s.email       = '513805252@qq.com'
-  s.files       = FileList.new "lib/*.rb"
+  s.files       = FileList.new "lib/*"
   s.homepage    = 'https://github.com/winteryoung/winter-rakeutils'
   s.license     = 'Apache-2.0'
 end

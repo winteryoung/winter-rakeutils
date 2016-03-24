@@ -6,7 +6,7 @@ include WinterRakeUtils
 gem_spec = Gem::Specification::load("#{APP_NAME}.gemspec")
 ver = gem_spec.version
 gem_source_files = FileList.new "lib/*", "bin/*", "#{APP_NAME}.gemspec"
-gem_file = FileList.new "#{TARGET_DIR}/#{APP_NAME}-#{ver}.gem"
+gem_file = "#{TARGET_DIR}/#{APP_NAME}-#{ver}.gem"
 
 directory TARGET_DIR
 
