@@ -37,8 +37,14 @@ module WinterRakeUtils
       Dir.chdir pwd
     end
   end
-end
 
-task :gitcommit do
-  git_commit_push
+  def load_gem_tasks
+    spec = Gem::Specification.find_by_name 'winter_rakeutils'
+    load "#{spec.gem_dir}/lib/winter_gemtasks.rake"
+  end
+
+  def load_git_tasks
+    spec = Gem::Specification.find_by_name 'winter_rakeutils'
+    load "#{spec.gem_dir}/lib/winter_gittasks.rake"
+  end
 end
