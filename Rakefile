@@ -8,10 +8,6 @@ app_name = "winter_rakeutils"
 gem_spec = Gem::Specification::load("#{app_name}.gemspec")
 ver = gem_spec.version
 
-task :gitcommit do
-  git_commit_push
-end
-
 task :clean do
   rm_rf "target"
 end

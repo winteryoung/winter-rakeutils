@@ -1,3 +1,5 @@
+require 'rake'
+
 module WinterRakeUtils
   def git_working_dir_clean?
     `git status`.lines.each do |line|
@@ -35,4 +37,8 @@ module WinterRakeUtils
       Dir.chdir pwd
     end
   end
+end
+
+task :gitcommit do
+  git_commit_push
 end
