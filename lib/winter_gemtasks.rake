@@ -3,12 +3,12 @@ require_relative 'winter_rakeutils'
 
 include WinterRakeUtils
 
+load 'lib/winter_commontasks.rake'
+
 gem_spec = Gem::Specification::load("#{APP_NAME}.gemspec")
 ver = gem_spec.version
 gem_source_files = FileList.new "lib/*", "bin/*", "#{APP_NAME}.gemspec"
 gem_file = "#{TARGET_DIR}/#{APP_NAME}-#{ver}.gem"
-
-directory TARGET_DIR
 
 rule /#{TARGET_DIR}\/.+?\.gem/ => [*gem_source_files, TARGET_DIR] do |t|
   sh "gem build #{APP_NAME}.gemspec"

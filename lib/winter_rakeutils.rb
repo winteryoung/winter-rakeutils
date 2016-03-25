@@ -1,8 +1,11 @@
 require 'rake'
+require 'fileutils'
 
 CLOBBER.include TARGET_DIR
 
 module WinterRakeUtils
+  extend FileUtils
+
   module_function
 
   def git_working_dir_clean?
@@ -50,5 +53,10 @@ module WinterRakeUtils
   def load_git_tasks
     spec = Gem::Specification.find_by_name 'winter_rakeutils'
     load "#{spec.gem_dir}/lib/winter_gittasks.rake"
+  end
+
+  def load_common_tasks
+    spec = Gem::Specification.find_by_name 'winter_rakeutils'
+    load "#{spec.gem_dir}/lib/winter_commontasks.rake"
   end
 end
