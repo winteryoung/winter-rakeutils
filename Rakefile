@@ -6,5 +6,6 @@ TARGET_DIR = "target"
 load 'lib/winter_gemtasks.rake'
 load 'lib/winter_gittasks.rake'
 
+task :default => [ :publish_gem, :gitcommit ]
 task :local => [ :clobber, :local_gem ]
 task :publish => [ :local, :publish_gem ]

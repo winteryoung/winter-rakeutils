@@ -3,7 +3,7 @@ require_relative 'winter_rakeutils'
 
 include WinterRakeUtils
 
-load 'lib/winter_commontasks.rake'
+load File.expand_path('../winter_commontasks.rake', __FILE__)
 
 gem_spec = Gem::Specification::load("#{APP_NAME}.gemspec")
 ver = gem_spec.version
