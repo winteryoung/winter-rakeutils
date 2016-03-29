@@ -1,1 +1,3 @@
 directory TARGET_DIR
+
+CLOBBER.include TARGET_DIR
